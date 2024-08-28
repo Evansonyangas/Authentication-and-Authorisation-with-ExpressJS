@@ -88,3 +88,28 @@ document.getElementById("delete-user-form").addEventListener("submit", async (ev
 - Add the code to a new file named `deleteUserFeature.js`.
 - Ensure necessary imports and dependencies are in place.
 - Inject the HTML form in your web page where you want to allow user deletion.
+
+
+
+### Challenge Part 2: Authentication vs. Authorization
+
+#### Is It a Good Idea to Allow Deleting Users After Authentication?
+
+The requirement to allow user deletion functionality after authentication is **not a good idea** without proper authorization checks. Authentication merely verifies the identity of the user, ensuring that the person accessing the system is who they claim to be. However, it does not determine what actions the user is allowed to perform within the system.
+
+### Authentication vs. Authorization
+
+- **Authentication**: This process confirms the user's identity, usually through a login process involving credentials like a username and password. It's the first step in security but doesn't manage what the user can do after logging in.
+
+- **Authorization**: This process checks whether the authenticated user has the necessary permissions to perform specific actions, like deleting another user. Even if a user is authenticated, they should only be able to delete other users if they have the appropriate permissions (e.g., admin rights).
+
+### Why They Are Different
+
+- **Authentication** is about verifying identity.
+- **Authorization** is about verifying permissions.
+
+Allowing a user to delete other users based solely on authentication could lead to serious security risks, such as unauthorized users deleting critical accounts.
+
+Here’s a simple diagram to visualize the difference between these two concepts:
+
+![diagram.png](diagram.png)
